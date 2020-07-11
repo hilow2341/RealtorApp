@@ -3,48 +3,36 @@ import logo from './logo.svg';
 import './App.css';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button } from 'react-bulma-components';
-import { BrowserRouter, Route, Link } from "react-router-dom";
-class App extends Component {
-  constructor(props){
-    super(props)
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-  }
+import Dashboard from "./components/Dashboard";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Home from "./components/Home";
+
+
+
+export default class App extends Component {
+  // constructor(props){
+  //   super(props)
+
+  // }
+
 
   render(){
   return (
-    <div className="App">
-     <Button color="primary">My Bulma button</Button>
-     <article className="media">
-        <figure className="media-left">
-          <p className="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" />
-          </p>
-        </figure>
-        <div className="media-content">
-          <div className="field">
-            <p className="control">
-              <textarea className="textarea" placeholder="Add a comment..." defaultValue={""} />
-            </p>
-          </div>
-          <nav className="level">
-            <div className="level-left">
-              <div className="level-item">
-  <a  a className="button is-info">Submit</a>
-              </div>
-            </div>
-            <div className="level-right">
-              <div className="level-item">
-                <label className="checkbox">
-                  <input type="checkbox" /> Press enter to submit
-                </label>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </article> 
-    </div>
-  );
-  }
+<Router>
+    <Switch>
 
+    <Route exact path="/" component={Home}/> 
+    <Route exact path="/signup" component={Signup}/>
+    <Route exact path="/login" component={Login}/>
+    <Route exact path="/dashboard" component={Dashboard}/>
+
+  </Switch>
+
+</Router>
+  
+
+  )}
 }
-export default App;
