@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const sequalize = require("sequalize");
+const Schema = sequalize.Schema;
 
 const listSchema = new Schema({
   title: { type: String, required: true },
@@ -11,6 +11,6 @@ const listSchema = new Schema({
   googleId: { type: String, required: true, unique: true }
 });
 
-const List = mongoose.model("List", listSchema);
+const List = sequalize.model("List", listSchema);
 
 module.exports = List;
