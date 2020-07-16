@@ -12,7 +12,13 @@ export default class Signup extends Component{
 
         return(
             <div>
-                <h1>This is for a Sign Up</h1>
+                <h1>Please log in to you account!</h1>
+                <form>
+            First name:<input></input>
+            Last name:<input></input>
+
+           
+            </form>
             </div>
         )
 
