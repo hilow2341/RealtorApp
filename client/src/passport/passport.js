@@ -1,8 +1,9 @@
+import { User } from "/routes/user";
 var passport = require("passport")
 var LocalStrategy = require('passport-local').Strategy;
 
 
-var db = require("../schema");
+var db = require("../../database/db");
 
     //user will sign in with username, will edit once established
     passport.use(new LocalStrategy(
