@@ -13,13 +13,12 @@ export default class Home extends Component{
   <meta charSet="utf-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landing - Free Bulma template</title>
+  <title>RelatorApp</title>
   <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
-  {/* Bulma Version 0.8.2*/}
-  <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/landing.css" />
+
+
   <section className="hero is-info is-fullheight">
     <div className="hero-head">
       <nav className="navbar">
@@ -41,7 +40,7 @@ export default class Home extends Component{
                   <span className="icon">
                     <i className="fa fa-home" />
                   </span>
-                  <span>Log-in</span>
+                  <span>Sign-up</span>
                 </a>
               </span>
               <span className="navbar-item">
@@ -70,7 +69,7 @@ export default class Home extends Component{
       <div className="container has-text-centered">
         <div className="column is-6 is-offset-3">
           <h1 className="title">
-           Sign in!
+          Log in!
           </h1>
           <h2 className="subtitle">
             This is the best place to start when buying a new house.
@@ -83,7 +82,7 @@ export default class Home extends Component{
               </p>
               <p className="control">
                 <a className="button is-info">
-                  Notify Me
+                  Log in 
                 </a>
               </p>
             </div>
