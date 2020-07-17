@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
-import passport from "../../src/passport";
+
 
 
 export default class Login extends Component{
