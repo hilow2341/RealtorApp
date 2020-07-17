@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3001;
 const session = require('express-session')
 
 
-const user = require('./routes/user')
+const user = require('./routes/Users')
 
 const passport = require()
 

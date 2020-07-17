@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import passport from "../passport/passport";
+import "./style.css"
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+
+
 
 export default class Signup extends Component{
     constructor() {
