@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import passport from "../../src/passport";
 
 
 export default class Login extends Component{
@@ -36,17 +37,6 @@ export default class Login extends Component{
                     </span>
                     </div>
                 </div>
-                <div class="field">
-                    <div className="control">
-                        <label className="radio">
-                            <input type="radio" name="question" />Looking to Sell
-                        </label>
-                        <label className="radio">
-                            <input type="radio" name="question" />Looking to Buy
-                        </label>
-                    </div>
-                </div>
-
                 <div className="field is-grouped">
                     <div className="control">
                         <button className="button is-link">Submit</button>
