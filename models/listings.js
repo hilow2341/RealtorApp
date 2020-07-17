@@ -2,13 +2,16 @@ const sequalize = require("sequalize");
 const Schema = sequalize.Schema;
 
 const listSchema = new Schema({
-  title: { type: String, required: true },
-  subtitle: { type: String },
-  authors: { type: [String], required: true },
-  link: { type: String, required: true },
+  address: { type: String, required: true },
+  city: { type: String },
+  state: { type: [String], required: true },
+  zip: { type: String, required: true },
+  price: { type: String, required: true },
+  baths: { type: String, required: true },
+  zip: { type: String, required: true },
   description: { type: String, required: true },
-  image: { type: String, required: true },
-  googleId: { type: String, required: true, unique: true }
+  image: { type: String, required: true }
+  
 });
 
 const List = sequalize.model("List", listSchema);

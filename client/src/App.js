@@ -9,6 +9,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
+import Search from "./components/Search";
 
 
 
@@ -28,6 +29,7 @@ export default class App extends Component {
     <Route exact path="/signup" component={Signup}/>
     <Route exact path="/login" component={Login}/>
     <Route exact path="/dashboard" component={Dashboard}/>
+    <Route exact path="/search" compenent={Search}/>
 
   </Switch>
 
