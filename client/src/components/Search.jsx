@@ -6,55 +6,67 @@ class Search extends Component {
     state = {
         searchValue: '',
         realEstate: [],
-        q: ''
+        q: '',
+        stateName: '',
+        cityName: ''
     };
 
     handleOnChange = event => {
-        this.setState({ searchValue: event.target.value });
+        this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleSearch = () => {
-        this.makeApiCall(this.state.searchValue);
+    handleSearch = (event) => {
+        event.preventDefault();
+        console.log("DFGH", this.state.cityName, this.state.stateName)
+        API.getRealestate(this.state.cityName, this.state.stateName)
+            .then((res) => {
+                console.log('RES Fron',  res.data.res);
+        this.setState({
+            realEstate: res.data.res
+        })
+             })
+            .catch (() => this.setState({
+            realEstate: [],
+            message: "There's no new listings!"
+        })
+            )
     }
 
-    getRealestate = () => {
-        API.getRealestate(this.state.q)
-            .then(res => this.setState({
-                realEstate: res.data
-            })
-            )
-            .catch(() => this.setState({
-                realEstate: [],
-                message: "There's no new listings!"
-            })
-            )
-    }
+    getRealestate = () => { }
+
 
     render() {
-
+        console.log('STATE', this.state)
         return (
             <div>
                 <h1>Welcome to the search app</h1>
+                <form>
+
+                    <label>
+                        City:
+                    <input type='text' name='cityName' value={this.state.cityName} onChange={this.handleOnChange} />
+                    </label>
+                    <label>
+                        State:
+                    <input type='text' name='stateName' value={this.state.stateName} onChange={this.handleOnChange} />
+                    </label>
+                    <button onClick={this.handleSearch}>Search</button>
+                </form>
+                {}
+
+           
+
+                {/* 
                 <input name="text" type="text" placeholder="Search"
                     onChange={event => this.handleOnChange(event)}
-                    value={this.state.searchValue} />
-                <button onClick={this.handleSearch}>Search</button>
+                    value={this.state.searchValue} /> */}
 
-                {this.state.realestate ? (
+
+                {this.state.realEstate.length > 0 ? (
                     <div>
-                        {this.state.realestate.map((estate, index) => (
+                        {this.state.realEstate.map((property, index) => (
                             <div key={index}>
-                                <h1>{estate.result.properties.thumbnail}</h1>
-                                <h2>{estate.result.properties.address.line}</h2>
-                                <h3>{estate.result.properties.address.city}</h3>
-                                <h3>{estate.result.properties.address.state_code}</h3>
-                                <h2>{estate.result.properties.price}</h2>
-                                <h3>{estate.result.properties.baths}</h3>
-                                <h3>{estate.result.properties.beds}</h3>
-                                <h4>{estate.result.properties.description}</h4>
-                                <h3>{estate.result.properties.agents.photo.href}</h3>
-                                <h3>{estate.result.properties.agents.name.href}</h3>
-                                
+                                <h1>{property.address.city}</h1>
                                 {/* <h1>{estate.strEstate}</h1> */}
                                 {/* <img src={meal.strEstateThumb} alt="estate-thumbnail" /> */}
                             </div>
