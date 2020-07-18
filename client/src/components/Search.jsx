@@ -44,7 +44,18 @@ class Search extends Component {
                     <div>
                         {this.state.realestate.map((estate, index) => (
                             <div key={index}>
-                                <h1>{estate.strEstate}</h1>
+                                <h1>{estate.result.properties.thumbnail}</h1>
+                                <h2>{estate.result.properties.address.line}</h2>
+                                <h3>{estate.result.properties.address.city}</h3>
+                                <h3>{estate.result.properties.address.state_code}</h3>
+                                <h2>{estate.result.properties.price}</h2>
+                                <h3>{estate.result.properties.baths}</h3>
+                                <h3>{estate.result.properties.beds}</h3>
+                                <h4>{estate.result.properties.description}</h4>
+                                <h3>{estate.result.properties.agents.photo.href}</h3>
+                                <h3>{estate.result.properties.agents.name.href}</h3>
+                                
+                                {/* <h1>{estate.strEstate}</h1> */}
                                 {/* <img src={meal.strEstateThumb} alt="estate-thumbnail" /> */}
                             </div>
                         ))}
