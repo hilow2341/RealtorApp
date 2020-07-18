@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../database/db");
 const { sequelize } = require("../database/db");
-//const Schema = sequelize.Schema;
+
 
 const listSchema = db.sequelize.define("listings",{
   address: { type: String, required: true },
@@ -16,6 +16,6 @@ const listSchema = db.sequelize.define("listings",{
   
 });
 
-//const List = sequelize.model("List", listSchema);
+
 
 module.exports = listSchema;

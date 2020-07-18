@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-
 import "./style.css"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
@@ -27,11 +26,12 @@ export default class Signup extends Component{
 		event.preventDefault()
         console.log('sign-up handleSubmit, username: ')
         console.log(this.state.username)
-        
+        const {email, username, password} = this.state;
 		//request to server to add a new username/password
-		axios.post('/user/', {
-			username: this.state.username,
-			password: this.state.password
+		axios.post('/user/signup', {
+			username,
+            password,
+            email,
 		})
 			.then(response => {
 				console.log(response)
@@ -54,7 +54,7 @@ export default class Signup extends Component{
 
         return(
     <div>
-        <div class="field">
+        <div className="field">
                         <label className="label">Email</label>
                     <div className="control has-icons-left has-icons-right">
                         <input className="input is-danger" type="email" placeholder="Email input" name="email" value={this.state.email} onChange={this.handleChange}/>
@@ -65,7 +65,7 @@ export default class Signup extends Component{
                             <i className="fas fa-exclamation-triangle"/>
                         </span>
                     </div>
-                    <p class="help is-danger">This email is invalid</p>
+                    <p className="help is-danger">This email is invalid</p>
         </div>
                 <div className="field">
                     <label className="label">Username</label>
@@ -85,7 +85,7 @@ export default class Signup extends Component{
                     <label className="label">Password</label>
                     <div className="control has-icons-left has-icons-right">
                         {/* add value */}
-                        <input className="input is-success" type="password" placeholder="Text input"  />
+                        <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"  />
                     <span className="icon is-small is-left">
                         <i className="fas fa-user"/>
                     </span>
@@ -119,6 +119,3 @@ export default class Signup extends Component{
     }
 
 }
-
-// for line 16
-// value={this.state.username} onChange={this.handleChange}
