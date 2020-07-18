@@ -1,27 +1,53 @@
+const axios = require("axios");
 const router = require("express").Router();
 const listController = require("../../controllers/listController");
 
 router.route("/search")
   .get(function(req, res){
-    const { query: params } = req;
-    let queryString = new URLSearchParams(params);
+    console.log('API BACK', req.query)
+    const { c, s } = req.query;
 
-    axios
-      .get("https://realtor.p.rapidapi.com/properties/v2/list-for-sale?" + queryString.toString() ,
+   // let queryString = new URLSearchParams(params);
+   axios({
+    "method":"GET",
+    "url":"https://realtor.p.rapidapi.com/properties/v2/list-for-sale",
+    "headers":{
+    "content-type":"application/json",
+    "x-rapidapi-host":"realtor.p.rapidapi.com",
+    "x-rapidapi-key":"2a3d915d9fmsh97046c7b26f3582p13d051jsndd231ed74692",
+    "useQueryString":true
+    },"params":{
+    "sort":"relevance",
+    "city":`${c}`,
+    "limit":"20",
+    "offset":"0",
+    "state_code":`${s}`
+    }
+    })
+    .then((response)=>{
+      console.log('res', response.data.properties)
+      res.json({res: response.data.properties})
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
 
-        {
-          "headers": {
-            "content-type": "application/octet-stream",
-            "x-rapidapi-host": "realtor.p.rapidapi.com",
-            "x-rapidapi-key": "2a3d915d9fmsh97046c7b26f3582p13d051jsndd231ed74692",
-            "useQueryString": true
-          }
-        })
+    // axios
+    //   .get(`https://realtor.p.rapidapi.com/properties/v2/list-for-sale?/${c}/${s}` ,
+
+    //     {
+    //       "headers": {
+    //         "content-type": "application/octet-stream",
+    //         "x-rapidapi-host": "realtor.p.rapidapi.com",
+    //         "x-rapidapi-key": "2a3d915d9fmsh97046c7b26f3582p13d051jsndd231ed74692",
+    //         "useQueryString": true
+    //       }
+    //     })
 
 
-      .then(results => res.json(results.data.properties))
+    //   .then((results) => console.log('res', results))
       
-      .catch(err => res.status(422).json(err));
+    //   .catch(err => res.status(422).json(err));
   });
 
 //Here's api return
