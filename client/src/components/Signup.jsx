@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./style.css"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -65,12 +66,11 @@ export default class Signup extends Component{
                             <i className="fas fa-exclamation-triangle"/>
                         </span>
                     </div>
-                    <p className="help is-danger">This email is invalid</p>
         </div>
                 <div className="field">
                     <label className="label">Username</label>
                     <div className="control has-icons-left has-icons-right">
-                        {/* add value */}
+                        
                     <input className="input is-success" type="text" name="username" placeholder="Text input" value={this.state.username} onChange={this.handleChange} />
                      <span className="icon is-small is-left">
                         <i className="fas fa-user"/>
@@ -79,12 +79,11 @@ export default class Signup extends Component{
                         <i className="fas fa-check"/>
                     </span>
                     </div>
-                        <p className="help is-success">This username is available</p>
                 </div>
                 <div className="field">
                     <label className="label">Password</label>
                     <div className="control has-icons-left has-icons-right">
-                        {/* add value */}
+                        
                         <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"  />
                     <span className="icon is-small is-left">
                         <i className="fas fa-user"/>
@@ -110,7 +109,9 @@ export default class Signup extends Component{
                         <button className="button is-link" onClick={this.handleSubmit}>Submit</button>
                     </div>
                     <div className="control">
-                        <button className="button is-link is-light">Cancel</button>
+                        <Link to="/login">
+                        <button className="button is-link is-light" >Click Here if you have logged in already</button>
+                        </Link>
                     </div>
                 </div>
     </div>
