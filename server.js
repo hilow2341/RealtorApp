@@ -34,7 +34,6 @@ app.post('/user', (req, res) => {
     res.end()
   })
 
-
 const connection = mysql.createConnection({
     host: "process.env.host",
     port: "3306",

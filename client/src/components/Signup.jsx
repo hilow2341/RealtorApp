@@ -11,8 +11,8 @@ export default class Signup extends Component{
 		super()
 		this.state = {
 			username: '',
-			password: '',
-			confirmPassword: '',
+            password: '',
+			email: '',
 
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,10 +24,10 @@ export default class Signup extends Component{
 		})
 	}
 	handleSubmit(event) {
-		console.log('sign-up handleSubmit, username: ')
-		console.log(this.state.username)
 		event.preventDefault()
-
+        console.log('sign-up handleSubmit, username: ')
+        console.log(this.state.username)
+        
 		//request to server to add a new username/password
 		axios.post('/user/', {
 			username: this.state.username,
@@ -57,7 +57,7 @@ export default class Signup extends Component{
         <div class="field">
                         <label className="label">Email</label>
                     <div className="control has-icons-left has-icons-right">
-                        <input className="input is-danger" type="email" placeholder="Email input" value="hello@"/>
+                        <input className="input is-danger" type="email" placeholder="Email input" name="email" value={this.state.email} onChange={this.handleChange}/>
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"/>
                         </span>
@@ -107,7 +107,7 @@ export default class Signup extends Component{
 
                 <div className="field is-grouped">
                     <div className="control">
-                        <button className="button is-link">Submit</button>
+                        <button className="button is-link" onClick={this.handleSubmit}>Submit</button>
                     </div>
                     <div className="control">
                         <button className="button is-link is-light">Cancel</button>

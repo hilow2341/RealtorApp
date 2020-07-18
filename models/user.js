@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
-const db = require("../client/src/database/db");
-const { sequelize } = require("../client/src/database/db");
+const db = require("../database/db");
+const { sequelize } = require("../database/db");
 const { timeStamp } = require("console");
 
 module.exports = db.Sequelize.define(

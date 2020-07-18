@@ -1,7 +1,9 @@
-const sequalize = require("sequalize");
-const Schema = sequalize.Schema;
+const Sequelize = require("sequelize");
+const db = require("../database/db");
+const { sequelize } = require("../database/db");
+//const Schema = sequelize.Schema;
 
-const listSchema = new Schema({
+const listSchema = db.sequelize.define("listings",{
   address: { type: String, required: true },
   city: { type: String },
   state: { type: [String], required: true },
@@ -14,6 +16,6 @@ const listSchema = new Schema({
   
 });
 
-const List = sequalize.model("List", listSchema);
+//const List = sequelize.model("List", listSchema);
 
-module.exports = List;
+module.exports = listSchema;
