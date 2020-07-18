@@ -30,19 +30,6 @@ class Search extends Component {
             )
     }
 
-    // makeApiCall = searchInput => {
-    //     var searchUrl = ``;
-    //     fetch(searchUrl)
-    //         .then(response => {
-    //             return response.json();
-    //         })
-    //         .then(jsonData => {
-    //             console.log(jsonData.realestate);
-    //             this.setState({ realestate: jsonData.realestate });
-    //         });
-    // };
-
-
     render() {
 
         return (
@@ -58,7 +45,7 @@ class Search extends Component {
                         {this.state.realestate.map((estate, index) => (
                             <div key={index}>
                                 <h1>{estate.strEstate}</h1>
-                                {/* <img src={meal.strMealThumb} alt="meal-thumbnail" /> */}
+                                {/* <img src={meal.strEstateThumb} alt="estate-thumbnail" /> */}
                             </div>
                         ))}
                     </div>
@@ -71,3 +58,15 @@ class Search extends Component {
     }
 }
 export default Search;
+
+// makeApiCall = searchInput => {
+    //     var searchUrl = ``;
+    //     fetch(searchUrl)
+    //         .then(response => {
+    //             return response.json();
+    //         })
+    //         .then(jsonData => {
+    //             console.log(jsonData.realestate);
+    //             this.setState({ realestate: jsonData.realestate });
+    //         });
+    // };
