@@ -70,6 +70,7 @@ export default class Home extends Component{
           <div className="box">
             <div className="field is-grouped">
               <p className="control is-expanded">
+              
                 <input className="input" type="text" placeholder="Enter your username" />
                 <input className="input" type="password" placeholder="Enter your Password"></input>
               </p>

@@ -114,6 +114,75 @@ export default class Signup extends Component{
                         </Link>
                     </div>
                 </div>
+{/* home */}
+<div >
+
+  <section className="hero is-info is-fullheight">
+    <div className="hero-head">
+      <nav className="navbar">
+        <div className="container">
+          <div className="navbar-brand">
+            
+              <p>RelatorApp </p>
+            
+            <span className="navbar-burger burger" data-target="navbarMenu">
+              <span />
+              <span />
+              <span />
+            </span>
+          </div>
+          <div id="navbarMenu" className="navbar-menu">
+            <div className="navbar-end">
+          
+             </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div className="hero-body">
+      <div className="container has-text-centered">
+        <div className="column is-6 is-offset-3">
+          <h1 className="title">
+          Sign up!
+          </h1>
+          <h2 className="subtitle">
+            This is the best place to start when buying a new house.
+          </h2>
+          <div className="box">
+            <div className="field is-grouped">
+              <p className="control is-expanded">
+              <input className="input" type="email" placeholder="Enter your Email" value={this.state.email} onChange={this.handleChange}></input>
+                <input className="input" type="text" placeholder="Enter your Username" value={this.state.username} onChange={this.handleChange}></input>
+                <input className="input" type="password" placeholder="Enter your Password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"></input>
+                <div className="field">
+                    <div className="control">
+                        <label className="radio">
+                            <input type="radio" name="question" />Looking to Sell
+                        </label>
+                        <label className="radio">
+                            <input type="radio" name="question" />Looking to Buy
+                        </label>
+                    </div>
+                </div>
+              </p>
+              <p className="control">
+              <button className="button is-link" onClick={this.handleSubmit}>Submit</button>
+              <div className="control">
+                        <Link to="/login">
+                        <button className="button is-link is-light" >Click Here if you have logged in already</button>
+                        </Link>
+                    </div>
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>         
+        
+
     </div>
         )
 
