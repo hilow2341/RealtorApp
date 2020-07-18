@@ -23,7 +23,7 @@ app.use(routes);
 app.use('/user', user)
 
 // If no API routes are hit, send the React app
-app.use((req, res) =>
+app.get("/",(req, res) =>
   res.sendFile(path.join(__dirname, "./client/build/index.html"))
 );
 
