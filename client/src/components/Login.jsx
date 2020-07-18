@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css"
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import { Link } from "react-router-dom";
 
 
 
@@ -42,7 +43,9 @@ export default class Login extends Component{
                         <button className="button is-link">Submit</button>
                     </div>
                     <div className="control">
+                        <Link to="/">
                         <button className="button is-link is-light">Cancel</button>
+                        </Link>
                     </div>
                 </div>
 

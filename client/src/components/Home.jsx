@@ -11,14 +11,6 @@ export default class Home extends Component{
             <div>         
            
  <div >
-  <meta charSet="utf-8" />
-  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RelatorApp</title>
-  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
-
 
   <section className="hero is-info is-fullheight">
     <div className="hero-head">
