@@ -3,24 +3,23 @@ const db = require("../database/db");
 const { sequelize } = require("../database/db");
 const { timeStamp } = require("console");
 
-module.exports = db.Sequelize.define(
-    "user",
-    {
-        id:{
+module.exports = db.sequelize.define(
+    "user",{
+        id: {
             type: Sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-       user:{
+        username: {
             type: Sequelize.STRING
         },
-        password:{
+        password: {
             type: Sequelize.STRING
         },
-        email:{
+        email: {
             type: Sequelize.STRING
         },
-        created:{
+        created: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
         }
@@ -28,5 +27,5 @@ module.exports = db.Sequelize.define(
     {
         timestamps: false
     }
-    
-    );
+
+);
