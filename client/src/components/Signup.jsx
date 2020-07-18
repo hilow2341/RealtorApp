@@ -55,65 +55,6 @@ export default class Signup extends Component{
 
         return(
     <div>
-        <div className="field">
-                        <label className="label">Email</label>
-                    <div className="control has-icons-left has-icons-right">
-                        <input className="input is-danger" type="email" placeholder="Email input" name="email" value={this.state.email} onChange={this.handleChange}/>
-                        <span className="icon is-small is-left">
-                            <i className="fas fa-envelope"/>
-                        </span>
-                        <span className="icon is-small is-right">
-                            <i className="fas fa-exclamation-triangle"/>
-                        </span>
-                    </div>
-        </div>
-                <div className="field">
-                    <label className="label">Username</label>
-                    <div className="control has-icons-left has-icons-right">
-                        
-                    <input className="input is-success" type="text" name="username" placeholder="Text input" value={this.state.username} onChange={this.handleChange} />
-                     <span className="icon is-small is-left">
-                        <i className="fas fa-user"/>
-                    </span>
-                    <span className="icon is-small is-right">
-                        <i className="fas fa-check"/>
-                    </span>
-                    </div>
-                </div>
-                <div className="field">
-                    <label className="label">Password</label>
-                    <div className="control has-icons-left has-icons-right">
-                        
-                        <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"  />
-                    <span className="icon is-small is-left">
-                        <i className="fas fa-user"/>
-                    </span>
-                    <span className="icon is-small is-right">
-                        <i className="fas fa-check"/>
-                    </span>
-                    </div>
-                </div>
-                <div className="field">
-                    <div className="control">
-                        <label className="radio">
-                            <input type="radio" name="question" />Looking to Sell
-                        </label>
-                        <label className="radio">
-                            <input type="radio" name="question" />Looking to Buy
-                        </label>
-                    </div>
-                </div>
-
-                <div className="field is-grouped">
-                    <div className="control">
-                        <button className="button is-link" onClick={this.handleSubmit}>Submit</button>
-                    </div>
-                    <div className="control">
-                        <Link to="/login">
-                        <button className="button is-link is-light" >Click Here if you have logged in already</button>
-                        </Link>
-                    </div>
-                </div>
 {/* home */}
 <div >
 
@@ -151,9 +92,9 @@ export default class Signup extends Component{
           <div className="box">
             <div className="field is-grouped">
               <p className="control is-expanded">
-              <input className="input" type="email" placeholder="Enter your Email" value={this.state.email} onChange={this.handleChange}></input>
-                <input className="input" type="text" placeholder="Enter your Username" value={this.state.username} onChange={this.handleChange}></input>
-                <input className="input" type="password" placeholder="Enter your Password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"></input>
+              <input className="input is-danger" type="email" placeholder="Email input" name="email" value={this.state.email} onChange={this.handleChange}/>
+              <input className="input is-success" type="text" name="username" placeholder="Text input" value={this.state.username} onChange={this.handleChange} />
+                <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"  />
                 <div className="field">
                     <div className="control">
                         <label className="radio">
