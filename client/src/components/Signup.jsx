@@ -91,10 +91,10 @@ export default class Signup extends Component{
           </h2>
           <div className="box">
             <div className="field is-grouped">
-              <p className="control is-expanded">
-              <input className="input is-danger" type="email" placeholder="Email input" name="email" value={this.state.email} onChange={this.handleChange}/>
-              <input className="input is-success" type="text" name="username" placeholder="Text input" value={this.state.username} onChange={this.handleChange} />
-                <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Text input"  />
+              <div className="control is-expanded">
+              <input className="input is-danger" type="email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange}/>
+              <input className="input is-success" type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleChange} />
+                <input name="password" className="input is-success" type="password" value={this.state.password} onChange={this.handleChange} placeholder="Password"  />
                 <div className="field">
                     <div className="control">
                         <label className="radio">
@@ -105,8 +105,8 @@ export default class Signup extends Component{
                         </label>
                     </div>
                 </div>
-              </p>
-              <p className="control">
+              </div>
+              <div className="control">
               <button className="button is-link" onClick={this.handleSubmit}>Submit</button>
               <div className="control">
                         <Link to="/login">
@@ -114,7 +114,7 @@ export default class Signup extends Component{
                         </Link>
                     </div>
 
-              </p>
+              </div>
             </div>
           </div>
         </div>

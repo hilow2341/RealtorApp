@@ -1,31 +1,31 @@
+const bcrypt = require('bcrypt');
 const Sequelize = require("sequelize");
 const db = require("../database/db");
-const { sequelize } = require("../database/db");
-const { timeStamp } = require("console");
+const saltRounds = 10;
 
-module.exports = db.sequelize.define(
-    "user",{
-        id: {
-            type: Sequelize.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        username: {
-            type: Sequelize.STRING
-        },
-        password: {
-            type: Sequelize.STRING
-        },
-        email: {
-            type: Sequelize.STRING
-        },
-        created: {
-            type: Sequelize.DATE,
-            defaultValue: Sequelize.NOW
-        }
+const User = db.sequelize.define("user", {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
-    {
-        timestamps: false
+    username: {
+        type: Sequelize.STRING
+    },
+    password: {
+        type: Sequelize.STRING
+    },
+    email: {
+        type: Sequelize.STRING,
+        unique: true
     }
+},
+    {
+        timestamps: true
+    });
 
-);
+User.hashPassword = (newPassword) => {
+    return bcrypt.hash(newPassword, saltRounds)
+}
+
+module.exports = User;
