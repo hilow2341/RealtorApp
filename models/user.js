@@ -26,6 +26,10 @@ const User = db.sequelize.define("user", {
 
 User.hashPassword = (newPassword) => {
     return bcrypt.hash(newPassword, saltRounds)
+};
+
+User.prototype.verifyPassword = function (suppliedPassword) {
+    return bcrypt.compare(suppliedPassword, this.password);
 }
 
 module.exports = User;
