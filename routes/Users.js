@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
-const cors = require("cors");
-
+const passport = require('passport');
 const { User } = require("../models");
 
 process.env.SECRET_KEY = 'secret';
 
-
+//sign up with email, username, password
+//hides password in database using bcrypt
 router.post("/signup", async (req, res) => {
     console.log('req body', req.body);
     const { email, password} = req.body;
@@ -25,17 +24,8 @@ router.post("/signup", async (req, res) => {
     }
 });
 
-router.post("/login", (req, res) => {
-    User.findOne({
-        where: {
-            email: req.body.email
-        }
-    })
-        .then(user => {
-            if (bcrypt.compareSync(req.body.password, user.password)) {
-
-            }
-        })
-});
+router.post("/login", passport.authenticate('local', { failureRedirect: '/login' }),
+  (req, res) => res.send({success: 'Login Successful'})
+);
 
 module.exports = router;
