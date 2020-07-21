@@ -13,9 +13,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.List.create(req.body)
-      .then(dbList => res.json(dbList))
-      .catch(err => res.status(422).json(err));
+    console.log('DATA', req.body)
+   // db.List.create(req.body)
+     // .then(dbList => res.json(dbList))
+      //.catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
     db.List.findOneAndUpdate({ id: req.params.id }, req.body)
