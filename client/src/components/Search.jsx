@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../API";
+import "./Search.css";
 
 class Search extends Component {
 
