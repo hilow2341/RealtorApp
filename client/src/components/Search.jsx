@@ -20,21 +20,21 @@ class Search extends Component {
         console.log("DFGH", this.state.cityName, this.state.stateName)
         API.getRealestate(this.state.cityName, this.state.stateName)
             .then((res) => {
-                console.log('RES Fron',  res.data.res);
-        this.setState({
-            realEstate: res.data.res
-        })
-             })
-            .catch (() => this.setState({
-            realEstate: [],
-            message: "There's no new listings!"
-        })
+                console.log('RES Fron', res.data.res);
+                this.setState({
+                    realEstate: res.data.res
+                })
+            })
+            .catch(() => this.setState({
+                realEstate: [],
+                message: "There's no new listings!"
+            })
             )
     }
 
-   //create a function , thats post to db
-   //youll make the API.saveListing(pass arg)
-   //arg has to be and obj with data
+    //create a function , thats post to db
+    //youll make the API.saveListing(pass arg)
+    //arg has to be and obj with data
 
     getRealestate = () => { }
 
@@ -43,7 +43,8 @@ class Search extends Component {
         console.log('STATE', this.state)
         return (
             <div>
-                <h1>Welcome to the search app</h1>
+                <br></br>
+                <h1 className="SearchTitle">Search for Real Estate!</h1>
                 <form>
 
                     <label>
@@ -58,7 +59,7 @@ class Search extends Component {
                 </form>
                 {}
 
-           
+
 
                 {/* 
                 <input name="text" type="text" placeholder="Search"
@@ -69,17 +70,23 @@ class Search extends Component {
                 {this.state.realEstate.length > 0 ? (
                     <div>
                         {this.state.realEstate.map((property, index) => (
-                        
+
                             <div key={index}>
-                                <h1>{property.address.line}</h1>
-                                <h2>
-                                    {property.address.city}
-                                </h2>
-                                <h2>  {property.address.state_code}</h2>
-                                <h2> {property.address.postal_code}</h2>
+                                <br></br>
+                                <img src={property.thumbnail} alt="Real Estate"></img>
+                                <h1 className="Price">${property.price}</h1>
+
+                                <br></br>
+                                <h2 className="Address1">{property.address.line}</h2>
+                                <h2 className="Address2">{property.address.city},&nbsp;
+                                {property.address.state_code}&nbsp;
+                                {property.address.postal_code}</h2>
                                 
-                                {/* <h1>{estate.strEstate}</h1> */}
-                                {/* <img src={meal.strEstateThumb} alt="estate-thumbnail" /> */}
+                                <br></br>
+                                <h3 className="Beds">Beds:&nbsp;{property.beds}</h3>
+                                <h3 className="Baths">Baths:&nbsp;{property.baths}</h3>
+
+
                             </div>
                         ))}
                     </div>

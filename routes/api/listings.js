@@ -19,7 +19,7 @@ router.route("/search")
     },"params":{
     "sort":"relevance",
     "city":`${c}`,
-    "limit":"7",
+    "limit":"2",
     "offset":"0",
 
     "state_code":`${s}`
