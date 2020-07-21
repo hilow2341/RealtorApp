@@ -8,4 +8,10 @@ router.use("/listings", listRoutes);
 
 router.use("/realtor", realtorRoutes);
 
+
+
+//matching route from axios
+
+//router.route("name/of/route").post(listingcontroller.findall)
+
 module.exports = router;

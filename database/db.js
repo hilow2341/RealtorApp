@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = {}
 //const realtorstore_db = require("../schema/realtorstore_db.sql")
-const sequelize = new Sequelize('realtorstore_db', 'root', 'BeacHrD1213', {
+const sequelize = new Sequelize('realtorstore_db', 'root', '2341', {
   host: 'localhost',
   port: 3306,
   dialect: 'mysql',

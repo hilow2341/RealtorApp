@@ -19,8 +19,9 @@ router.route("/search")
     },"params":{
     "sort":"relevance",
     "city":`${c}`,
-    "limit":"20",
+    "limit":"7",
     "offset":"0",
+
     "state_code":`${s}`
     }
     })
@@ -48,7 +49,17 @@ router.route("/search")
     //   .then((results) => console.log('res', results))
       
     //   .catch(err => res.status(422).json(err));
-  });
+  }
+
+
+  // .post(listController.create)
+  
+  
+  );
+
+
+
+ 
 
 //Here's api return
 // results.data.items.filter(

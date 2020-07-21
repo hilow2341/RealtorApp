@@ -32,6 +32,10 @@ class Search extends Component {
             )
     }
 
+   //create a function , thats post to db
+   //youll make the API.saveListing(pass arg)
+   //arg has to be and obj with data
+
     getRealestate = () => { }
 
 
@@ -65,8 +69,15 @@ class Search extends Component {
                 {this.state.realEstate.length > 0 ? (
                     <div>
                         {this.state.realEstate.map((property, index) => (
+                        
                             <div key={index}>
-                                <h1>{property.address.city}</h1>
+                                <h1>{property.address.line}</h1>
+                                <h2>
+                                    {property.address.city}
+                                </h2>
+                                <h2>  {property.address.state_code}</h2>
+                                <h2> {property.address.postal_code}</h2>
+                                
                                 {/* <h1>{estate.strEstate}</h1> */}
                                 {/* <img src={meal.strEstateThumb} alt="estate-thumbnail" /> */}
                             </div>
