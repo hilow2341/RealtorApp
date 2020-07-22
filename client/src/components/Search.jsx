@@ -46,15 +46,14 @@ class Search extends Component {
             <div>
                 <br></br>
                 <h1 className="SearchTitle">Search for Real Estate!</h1>
-                <form>
-
+                <form className="formOne">
                     <label>
-                        City:
-                    <input type='text' name='cityName' value={this.state.cityName} onChange={this.handleOnChange} />
+                        <h2>City:</h2>
+                        <input type='text' name='cityName' value={this.state.cityName} onChange={this.handleOnChange} />
                     </label>
                     <label>
-                        State:
-                    <input type='text' name='stateName' value={this.state.stateName} onChange={this.handleOnChange} />
+                        <h2>State:</h2>
+                        <input type='text' name='stateName' value={this.state.stateName} onChange={this.handleOnChange} />
                     </label>
                     <button onClick={this.handleSearch}>Search</button>
                 </form>
@@ -82,7 +81,7 @@ class Search extends Component {
                                 <h2 className="Address2">{property.address.city},&nbsp;
                                 {property.address.state_code}&nbsp;
                                 {property.address.postal_code}</h2>
-                                
+
                                 <br></br>
                                 <h3 className="Beds">Beds:&nbsp;{property.beds}</h3>
                                 <h3 className="Baths">Baths:&nbsp;{property.baths}</h3>
@@ -94,7 +93,14 @@ class Search extends Component {
                 ) : (
                         <p>Try searching for real estate!</p>
                     )}
-
+                {/* <footer className="footer">
+                    <div className="content has-text-centered">
+                        <p>
+                            <strong>Neighborhood Realty</strong> by Jason, Julian and Peter. This website is amazing!
+                 <a href="https://iamawesome.com"> Click Here to be Awesome</a>.
+                </p>
+                    </div>
+                </footer> */}
             </div>
         )
     }

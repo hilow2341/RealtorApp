@@ -60,7 +60,7 @@ class Signup extends Component {
                 <div className="container">
                   <div className="navbar-brand">
 
-                    <p>RelatorApp </p>
+                    <p className="leadTitle">Neighborhood Realtor</p>
 
                     <span className="navbar-burger burger" data-target="navbarMenu">
                       <span />
